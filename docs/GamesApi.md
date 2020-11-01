@@ -1,7 +1,5 @@
 # GamesApi
 
-All URIs are relative to */*
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createBoard**](GamesApi.md#createBoard) | **POST** /games | Create a new board for the logged in user

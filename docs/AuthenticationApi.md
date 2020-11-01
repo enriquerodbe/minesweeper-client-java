@@ -1,6 +1,6 @@
 # AuthenticationApi
 
-All URIs are relative to */*
+All URIs are relative to *http://localhost:9000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="login"></a>
 # **login**
-> login(body)
+> AuthToken login(body)
 
 User login
 
@@ -23,7 +23,8 @@ User login
 AuthenticationApi apiInstance = new AuthenticationApi();
 Credentials body = new Credentials(); // Credentials | The credentials for logging in
 try {
-    apiInstance.login(body);
+    AuthToken result = apiInstance.login(body);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthenticationApi#login");
     e.printStackTrace();
@@ -38,7 +39,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**AuthToken**](AuthToken.md)
 
 ### Authorization
 
@@ -51,7 +52,7 @@ No authorization required
 
 <a name="register"></a>
 # **register**
-> register(body)
+> AuthToken register(body)
 
 Register a new user
 
@@ -65,7 +66,8 @@ Register a new user
 AuthenticationApi apiInstance = new AuthenticationApi();
 Credentials body = new Credentials(); // Credentials | The new user data
 try {
-    apiInstance.register(body);
+    AuthToken result = apiInstance.register(body);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthenticationApi#register");
     e.printStackTrace();
@@ -80,7 +82,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**AuthToken**](AuthToken.md)
 
 ### Authorization
 

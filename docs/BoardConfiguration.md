@@ -1,8 +1,8 @@
 # BoardConfiguration
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**rows** | **Integer** |  |  [optional]
-**columns** | **Integer** |  |  [optional]
-**mines** | **Integer** |  |  [optional]
+Name | Type
+------------ | -------------
+**rows** | **Integer**
+**columns** | **Integer**
+**mines** | **Integer**

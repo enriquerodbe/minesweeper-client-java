@@ -19,56 +19,33 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.Coordinates;
-import io.swagger.client.model.PlayerMoveType;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * PlayerMove
+ * AuthToken
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-11-01T12:40:21.123600-03:00[America/Montevideo]")
-public class PlayerMove {
-  @SerializedName("moveType")
-  private PlayerMoveType moveType = null;
+public class AuthToken {
+  @SerializedName("token")
+  private String token = null;
 
-  @SerializedName("coordinates")
-  private Coordinates coordinates = null;
-
-  public PlayerMove moveType(PlayerMoveType moveType) {
-    this.moveType = moveType;
+  public AuthToken token(String token) {
+    this.token = token;
     return this;
   }
 
    /**
-   * Get moveType
-   * @return moveType
+   * Get token
+   * @return token
   **/
   @Schema(description = "")
-  public PlayerMoveType getMoveType() {
-    return moveType;
+  public String getToken() {
+    return token;
   }
 
-  public void setMoveType(PlayerMoveType moveType) {
-    this.moveType = moveType;
-  }
-
-  public PlayerMove coordinates(Coordinates coordinates) {
-    this.coordinates = coordinates;
-    return this;
-  }
-
-   /**
-   * Get coordinates
-   * @return coordinates
-  **/
-  @Schema(description = "")
-  public Coordinates getCoordinates() {
-    return coordinates;
-  }
-
-  public void setCoordinates(Coordinates coordinates) {
-    this.coordinates = coordinates;
+  public void setToken(String token) {
+    this.token = token;
   }
 
 
@@ -80,24 +57,22 @@ public class PlayerMove {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PlayerMove playerMove = (PlayerMove) o;
-    return Objects.equals(this.moveType, playerMove.moveType) &&
-        Objects.equals(this.coordinates, playerMove.coordinates);
+    AuthToken authToken = (AuthToken) o;
+    return Objects.equals(this.token, authToken.token);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(moveType, coordinates);
+    return Objects.hash(token);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PlayerMove {\n");
+    sb.append("class AuthToken {\n");
     
-    sb.append("    moveType: ").append(toIndentedString(moveType)).append("\n");
-    sb.append("    coordinates: ").append(toIndentedString(coordinates)).append("\n");
+    sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("}");
     return sb.toString();
   }

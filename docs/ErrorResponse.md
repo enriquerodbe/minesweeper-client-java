@@ -1,6 +1,6 @@
 # ErrorResponse
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**error** | [**ErrorResponseError**](ErrorResponseError.md) |  |  [optional]
+Name | Type
+------------ | -------------
+**error** | [**ErrorResponseError**](ErrorResponseError.md)
