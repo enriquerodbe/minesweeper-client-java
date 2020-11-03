@@ -12,7 +12,7 @@
 
 package io.swagger.client;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-11-01T12:40:21.123600-03:00[America/Montevideo]")public class Pair {
+public class Pair {
     private String name = "";
     private String value = "";
 

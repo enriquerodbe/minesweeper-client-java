@@ -45,21 +45,25 @@ Add this dependency to your project's POM:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
+import io.swagger.client.ApiClient;
+import io.swagger.client.api.AuthenticationApi;
 import io.swagger.client.api.GamesApi;
 import io.swagger.client.model.*;
-import io.swagger.client.api.AuthenticationApi;
 
-public class AuthenticationApiExample {
+public class AuthenticationExample {
 
     public static void main(String[] args) throws Exception {
-        AuthenticationApi authApi = new AuthenticationApi();
+        ApiClient client = new ApiClient();
+        client.setBasePath("http://165.227.29.94:9000");
+
+        AuthenticationApi authApi = new AuthenticationApi(client);
         Credentials body = new Credentials();
         body.setEmail("test@example.com");
         body.setPassword("testPassword1234");
-        String token = authApi.login(body).getToken();
+        String token = authApi.register(body).getToken();
+        client.addDefaultHeader("X-Auth-Token", token);
 
-        GamesApi gamesApi = new GamesApi();
-        gamesApi.getApiClient().addDefaultHeader("X-Auth-Token", token);
+        GamesApi gamesApi = new GamesApi(client);
 
         BoardConfiguration configuration = new BoardConfiguration();
         configuration.setColumns(10);

@@ -12,21 +12,14 @@
 
 package io.swagger.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.ErrorResponseError;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
+
+import java.util.Objects;
 /**
  * ErrorResponse
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-11-01T12:40:21.123600-03:00[America/Montevideo]")
 public class ErrorResponse {
   @SerializedName("error")
   private ErrorResponseError error = null;

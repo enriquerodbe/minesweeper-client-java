@@ -41,23 +41,6 @@
         </executions>
       </plugin>
 
-      <!-- attach test jar -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>2.2</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>jar</goal>
-              <goal>test-jar</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-        </configuration>
-      </plugin>
-
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
@@ -101,6 +84,9 @@
             </goals>
           </execution>
         </executions>
+        <configuration>
+          <source>8</source>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -182,7 +168,7 @@
     </dependency>
   </dependencies>
   <properties>
-    <java.version>1.8</java.version>
+    <java.version>14</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <swagger-core-version>2.0.0</swagger-core-version>

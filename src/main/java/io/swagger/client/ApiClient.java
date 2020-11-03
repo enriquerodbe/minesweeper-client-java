@@ -16,6 +16,8 @@ import com.squareup.okhttp.*;
 import com.squareup.okhttp.internal.http.HttpMethod;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor.Level;
+import io.swagger.client.auth.ApiKeyAuth;
+import io.swagger.client.auth.Authentication;
 import okio.BufferedSink;
 import okio.Okio;
 import org.threeten.bp.LocalDate;
@@ -43,11 +45,6 @@ import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import io.swagger.client.auth.Authentication;
-import io.swagger.client.auth.HttpBasicAuth;
-import io.swagger.client.auth.ApiKeyAuth;
-import io.swagger.client.auth.OAuth;
 
 public class ApiClient {
 
@@ -264,36 +261,6 @@ public class ApiClient {
     }
 
     /**
-     * Helper method to set username for the first HTTP basic authentication.
-     *
-     * @param username Username
-     */
-    public void setUsername(String username) {
-        for (Authentication auth : authentications.values()) {
-            if (auth instanceof HttpBasicAuth) {
-                ((HttpBasicAuth) auth).setUsername(username);
-                return;
-            }
-        }
-        throw new RuntimeException("No HTTP basic authentication configured!");
-    }
-
-    /**
-     * Helper method to set password for the first HTTP basic authentication.
-     *
-     * @param password Password
-     */
-    public void setPassword(String password) {
-        for (Authentication auth : authentications.values()) {
-            if (auth instanceof HttpBasicAuth) {
-                ((HttpBasicAuth) auth).setPassword(password);
-                return;
-            }
-        }
-        throw new RuntimeException("No HTTP basic authentication configured!");
-    }
-
-    /**
      * Helper method to set API key value for the first API key authentication.
      *
      * @param apiKey API key
@@ -321,21 +288,6 @@ public class ApiClient {
             }
         }
         throw new RuntimeException("No API key authentication configured!");
-    }
-
-    /**
-     * Helper method to set access token for the first OAuth2 authentication.
-     *
-     * @param accessToken Access token
-     */
-    public void setAccessToken(String accessToken) {
-        for (Authentication auth : authentications.values()) {
-            if (auth instanceof OAuth) {
-                ((OAuth) auth).setAccessToken(accessToken);
-                return;
-            }
-        }
-        throw new RuntimeException("No OAuth2 authentication configured!");
     }
 
     /**
